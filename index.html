@@ -1,5 +1,17 @@
 }
 
+        .hero-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
         .hero-btn-green { background: #146e4d; color: white; }
         .hero-btn-white { background: white; color: #1e293b; }
 
@@ -103,34 +115,59 @@
 
         .check-list i { color: #146e4d; }
 
-        /* Western Union Details Table Container */
+        /* Secure Payment Portal Area */
         .donation-panel {
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
         }
 
         .panel-headline {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             color: #0f172a;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             border-bottom: 2px solid #f1f5f9;
             padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-payment-gate {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: #0070ba;
+            color: white;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 112, 186, 0.2);
         }
 
         .data-row {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            background: #f8fafc;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid #edf2f7;
         }
 
-        .data-row strong {
-            color: #475569;
-            display: inline-block;
-            width: 100px;
-        }
+        .data-row strong { color: #475569; }
+        .data-row span { font-weight: 600; color: #0f172a; }
 
         .notice-container {
             background: #fffbeb;
@@ -140,6 +177,7 @@
             margin-top: 20px;
             font-size: 13px;
             color: #78350f;
+            line-height: 1.5;
         }
 
         /* Dark Green Numbers Area */
@@ -191,6 +229,7 @@
             display: flex;
             gap: 10px;
             margin: 20px 0;
+            flex-wrap: wrap;
         }
 
         .social-matrix a {
@@ -205,6 +244,11 @@
             justify-content: center;
             text-decoration: none;
             font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .social-matrix a:hover {
+            background: rgba(255,255,255,0.15);
         }
 
         .foot-section-title {
@@ -223,43 +267,3 @@
         }
 
         .menu-stack a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 13px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .contact-stack {
-            font-size: 13px;
-            color: #cbd5e1;
-        }
-
-        .contact-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .contact-row i { color: #fbbf24; margin-top: 3px; }
-    </style>
-</head>
-<body>
-
-    <!-- Unified Sticky Header Header -->
-    <header>
-        <div class="header-brand">
-            <div class="logo-ring">GN</div>
-            <div class="brand-titles">
-                <h1>Good News for Orphans</h1>
-                <p>Hope · Care · Opportunity</p>
-            </div>
-        </div>
-        <div class="menu-trigger" onclick="switchView('home')">&#9776;</div>
-    </header>
-
-    <!-- SECTION 1: HOME PANEL CONTAINER -->
-    <div id="view-home" class="tab-view active-view">
-        <section class="hero-banner

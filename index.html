@@ -343,42 +343,58 @@
 
     </div>
 </footer>
-<!-- EXPANDED BOTTOM MENU INTERIOR LAYOUT -->
-<div style="display: flex; flex-direction: column; gap: 24px; font-family: sans-serif; text-align: left;">
+<!-- FIXED BOTTOM NAVIGATION MENU DRAWER -->
+<div id="side-menu-drawer" style="position: fixed; bottom: 0; left: 0; width: 100%; height: 80%; background: #0d233a !important; background-color: #0d233a !important; box-shadow: 0 -5px 25px rgba(0,0,0,0.3); z-index: 9999; padding: 30px 24px; border-radius: 20px 20px 0 0; box-sizing: border-box; font-family: sans-serif; display: flex; flex-direction: column; justify-content: space-between; overflow-y: auto; transform: translateY(100%); transition: transform 0.3s ease;">
     
-    <!-- Primary Page Navigation Group -->
-    <div style="display: flex; flex-direction: column; gap: 18px; padding-bottom: 10px;">
-        <a href="#home" style="color: #ffffff; text-decoration: none; font-size: 16px; font-weight: normal; display: block;">Home</a>
-        <a href="#about" style="color: #ffffff; text-decoration: none; font-size: 16px; font-weight: normal; display: block;">About Us</a>
-        <a href="#our-work" style="color: #ffffff; text-decoration: none; font-size: 16px; font-weight: normal; display: block;">Our Work</a>
-        <a href="#safeguarding" style="color: #ffffff; text-decoration: none; font-size: 16px; font-weight: normal; display: block;">Safeguarding</a>
-        <a href="#transparency" style="color: #ffffff; text-decoration: none; font-size: 16px; font-weight: normal; display: block;">Transparency</a>
-        <a href="#donate" style="color: #ffffff; text-decoration: none; font-size: 16px; font-weight: normal; display: block;">Donate</a>
-    </div>
-    
-    <!-- Detailed Core Programs Drop-Down Subgroup -->
-    <div style="display: flex; flex-direction: column; gap: 16px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px;">
-        <span style="color: #ffffff; font-weight: bold; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Our Work</span>
-        <a href="#education" style="color: #a0aec0; text-decoration: none; font-size: 15px; padding-left: 2px; display: block;">Education</a>
-        <a href="#food-needs" style="color: #a0aec0; text-decoration: none; font-size: 15px; padding-left: 2px; display: block;">Food & Basic Needs</a>
-        <a href="#wellbeing" style="color: #a0aec0; text-decoration: none; font-size: 15px; padding-left: 2px; display: block;">Community & Wellbeing</a>
-        <a href="#protection" style="color: #a0aec0; text-decoration: none; font-size: 15px; padding-left: 2px; display: block;">Child Protection</a>
+    <!-- Top Bar Control -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <div style="width: 40px; height: 5px; background: rgba(255,255,255,0.3); border-radius: 10px; margin: 0 auto; position: absolute; left: 50%; transform: translateX(-50%); top: 12px;"></div>
+        <span style="color: rgba(255,255,255,0.6); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: bold;">Navigation Menu</span>
+        <button onclick="toggleMenu()" style="background: none; border: none; color: #ffffff !important; font-size: 24px; cursor: pointer; padding: 0;">✕</button>
     </div>
 
-    <!-- Targeted Location and Direct Email Block -->
-    <div style="display: flex; flex-direction: column; gap: 16px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; margin-bottom: 10px;">
-        <span style="color: #ffffff; font-weight: bold; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Contact Us</span>
+    <!-- Links Layout -->
+    <div style="display: flex; flex-direction: column; gap: 24px; text-align: left;">
         
-        <!-- Physical Location Element -->
-        <div style="display: flex; align-items: flex-start; gap: 12px; color: #a0aec0; font-size: 15px; line-height: 1.5;">
-            <span style="color: #f3c63f; font-size: 16px; margin-top: 2px;">📍</span>
-            <span>Ssumbwe Village,<br>Wakiso District, Uganda</span>
+        <!-- Primary Menu -->
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+            <a href="#home" style="color: #ffffff !important; text-decoration: none; font-size: 17px; font-weight: 500; display: block;">Home</a>
+            <a href="#about" style="color: #ffffff !important; text-decoration: none; font-size: 17px; font-weight: 500; display: block;">About Us</a>
+            <a href="#our-work" style="color: #ffffff !important; text-decoration: none; font-size: 17px; font-weight: 500; display: block;">Our Work</a>
+            <a href="#safeguarding" style="color: #ffffff !important; text-decoration: none; font-size: 17px; font-weight: 500; display: block;">Safeguarding</a>
+            <a href="#transparency" style="color: #ffffff !important; text-decoration: none; font-size: 17px; font-weight: 500; display: block;">Transparency</a>
+            <a href="#donate" style="color: #ffffff !important; text-decoration: none; font-size: 17px; font-weight: 500; display: block;">Donate</a>
         </div>
         
-        <!-- Interactive Email Action Item -->
-        <div style="display: flex; align-items: center; gap: 12px; color: #a0aec0; font-size: 15px;">
-            <span style="color: #f3c63f; font-size: 16px;">✉️</span>
-            <a href="mailto:goodnewsfororphans2026@gmail.com" style="color: #a0aec0; text-decoration: none; word-break: break-all;">goodnewsfororphans2026@gmail.com</a>
+        <!-- Subcategories -->
+        <div style="border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 20px; display: flex; flex-direction: column; gap: 16px;">
+            <span style="color: #ffffff !important; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">Our Work</span>
+            <a href="#education" style="color: #cbd5e0 !important; text-decoration: none; font-size: 15px; display: block; padding-left: 5px;">Education</a>
+            <a href="#food-needs" style="color: #cbd5e0 !important; text-decoration: none; font-size: 15px; display: block; padding-left: 5px;">Food & Basic Needs</a>
+            <a href="#wellbeing" style="color: #cbd5e0 !important; text-decoration: none; font-size: 15px; display: block; padding-left: 5px;">Community & Wellbeing</a>
+            <a href="#protection" style="color: #cbd5e0 !important; text-decoration: none; font-size: 15px; display: block; padding-left: 5px;">Child Protection</a>
+        </div>
+
+        <!-- Contact Section -->
+        <div style="border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 20px;">
+            <span style="color: #ffffff !important; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 12px;">Contact Us</span>
+            
+            <div style="display: flex; align-items: flex-start; gap: 12px; color: #cbd5e0 !important; font-size: 15px; line-height: 1.5; margin-bottom: 12px;">
+                <span style="color: #f3c63f;">📍</span>
+                <span>Ssumbwe Village, Wakiso District, Uganda</span>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 12px; color: #cbd5e0 !important; font-size: 15px;">
+                <span style="color: #f3c63f;">✉️</span>
+                <a href="mailto:goodnewsfororphans2026@gmail.com" style="color: #cbd5e0 !important; text-decoration: none; word-break: break-all;">goodnewsfororphans2026@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div style="border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 15px; margin-top: 20px; text-align: center;">
+        <div style="font-size: 12px; color: #a0aec0;">
+            © 2026 Good News for Orphans. All rights reserved.
         </div>
     </div>
     </div>

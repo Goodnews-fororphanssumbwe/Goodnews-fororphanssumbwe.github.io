@@ -398,3 +398,178 @@
         </div>
     </div>
     </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Sections</title>
+    <!-- Font Awesome for Emojis/Icons replacement if desired -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        :root {
+            --text-main: #1a202c;
+            --text-muted: #4a5568;
+            --bg-light: #ffffff;
+            --accent-red: #e53e3e;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f7fafc;
+            color: var(--text-main);
+        }
+
+        .impact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        /* --- Section Styling --- */
+        .impact-section {
+            background-color: var(--bg-light);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-header .icon {
+            font-size: 1.6rem;
+        }
+
+        /* Text Layout Styling */
+        .text-block {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .text-p {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            margin: 0;
+            color: var(--text-main);
+        }
+
+        /* --- Image Grid Layouts --- */
+        .grid-layout {
+            display: grid;
+            gap: 12px;
+            width: 100%;
+        }
+
+        /* Layout for Sections 1 & 2: 1 Big top image, 2 small bottom images */
+        .grid-type-a {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-type-a .img-large {
+            grid-column: span 2;
+            aspect-ratio: 16 / 10;
+        }
+
+        .grid-type-a .img-small {
+            aspect-ratio: 1 / 1;
+        }
+
+        /* Layout for Section 3: 2x2 Balanced grid */
+        .grid-type-b {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            aspect-ratio: 1 / 1;
+        }
+
+        .grid-type-b .grid-img {
+            aspect-ratio: 1 / 1;
+        }
+
+        /* Generic Image Settings */
+        .grid-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+            background-color: #e2e8f0; /* Placeholder color while loading */
+        }
+    </style>
+</head>
+<body>
+
+<div class="impact-container">
+
+    <!-- SECTION 1: Community & Education -->
+    <section class="impact-section">
+        <div class="section-header">
+            <span class="icon">🎒</span>
+            <span>Community & Education</span>
+        </div>
+        <div class="text-block">
+            <p class="text-p">Education is the key to a brighter tomorrow.</p>
+            <p class="text-p">Back to basics, forward to the future. Supporting our local students today.</p>
+            <p class="text-p">Learning, growing, and thriving together.</p>
+        </div>
+        <div class="grid-layout grid-type-a">
+            <!-- Replace 'src' paths with your real image URLs -->
+            <img class="grid-img img-large" src="education-main.jpg" alt="Students sitting at school desks">
+            <img class="grid-img img-small" src="education-left.jpg" alt="Student holding a green bag package">
+            <img class="grid-img img-small" src="education-right.jpg" alt="Students receiving school materials">
+        </div>
+    </section>
+
+    <!-- SECTION 2: Gratitude & Connection -->
+    <section class="impact-section">
+        <div class="section-header">
+            <span class="icon">❤️</span>
+            <span>Gratitude & Connection</span>
+        </div>
+        <div class="text-block">
+            <p class="text-p">Making a difference together. Hearts full, futures bright.</p>
+            <p class="text-p">Thank you to everyone making this possible. This is why we do what we do.</p>
+        </div>
+        <div class="grid-layout grid-type-a">
+            <!-- Replace 'src' paths with your real image URLs -->
+            <img class="grid-img img-large" src="gratitude-main.jpg" alt="Students at school desks layout">
+            <img class="grid-img img-small" src="gratitude-left.jpg" alt="Handing out green donation packages">
+            <img class="grid-img img-small" src="gratitude-right.jpg" alt="Students talking at a classroom bench">
+        </div>
+    </section>
+
+    <!-- SECTION 3: Impact & Action -->
+    <section class="impact-section">
+        <div class="section-header">
+            <span class="icon">🌟</span>
+            <span>Impact & Action</span>
+        </div>
+        <div class="text-block">
+            <p class="text-p">Bringing smiles and support where it matters most.</p>
+            <p class="text-p">Empowering the next generation, one classroom at a time.</p>
+            <p class="text-p">Small gifts, big impact. Investing in their future.</p>
+        </div>
+        <div class="grid-type-b grid-layout">
+            <!-- Replace 'src' paths with your real image URLs -->
+            <img class="grid-img" src="impact-top-left.jpg" alt="Student showing a bright green folder">
+            <img class="grid-img" src="impact-top-right.jpg" alt="Student focusing on their classroom desk space">
+            <img class="grid-img" src="impact-bottom-left.jpg" alt="Top-down perspective of classroom donations">
+            <img class="grid-img" src="impact-bottom-right.jpg" alt="Close up view of classroom desk interaction">
+        </div>
+    </section>
+
+</div>
+
+</body>
+                </html>

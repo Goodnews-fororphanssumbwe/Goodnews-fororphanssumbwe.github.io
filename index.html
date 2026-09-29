@@ -238,44 +238,56 @@
 
     </div>
 </section>
-<!-- NAVIGATION SIDEBAR MENU DRAWER -->
-<div id="side-menu-drawer" style="position: fixed; top: 0; right: 0; width: 280px; height: 100%; background-color: #0d233a; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 9999; padding: 40px 24px; box-sizing: border-box; font-family: sans-serif; display: flex; flex-direction: column; justify-content: space-between; overflow-y: auto;">
+<!-- BOTTOM NAVIGATION MENU DRAWER -->
+<div id="side-menu-drawer" style="position: fixed; bottom: 0; left: 0; width: 100%; height: 80%; background-color: #0d233a; box-shadow: 0 -5px 25px rgba(0,0,0,0.15); z-index: 9999; padding: 30px 24px; border-radius: 20px 20px 0 0; box-sizing: border-box; font-family: sans-serif; display: flex; flex-direction: column; justify-content: space-between; overflow-y: auto; transform: translateY(100%); transition: transform 0.3s ease;">
     
-    <!-- Top Primary Menu Links -->
-    <div style="display: flex; flex-direction: column; gap: 18px;">
-        <a href="#home" style="color: #ffffff; text-decoration: none; font-size: 16px;">Home</a>
-        <a href="#about" style="color: #ffffff; text-decoration: none; font-size: 16px;">About Us</a>
-        <a href="#our-work" style="color: #ffffff; text-decoration: none; font-size: 16px;">Our Work</a>
-        <a href="#safeguarding" style="color: #ffffff; text-decoration: none; font-size: 16px;">Safeguarding</a>
-        <a href="#transparency" style="color: #ffffff; text-decoration: none; font-size: 16px;">Transparency</a>
-        <a href="#donate" style="color: #ffffff; text-decoration: none; font-size: 16px; margin-bottom: 10px;">Donate</a>
+    <!-- Header row inside the drawer with a visual pull bar and close button -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <div style="width: 40px; height: 5px; background: rgba(255,255,255,0.2); border-radius: 10px; margin: 0 auto; position: absolute; left: 50%; transform: translateX(-50%); top: 12px;"></div>
+        <span style="color: rgba(255,255,255,0.4); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Navigation Menu</span>
+        <button onclick="toggleMenu()" style="background: none; border: none; color: #ffffff; font-size: 24px; cursor: pointer; padding: 0;">✕</button>
+    </div>
+
+    <!-- Menu Links Layout arranged in columns for easier viewing on wide mobile formats -->
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <a href="#home" style="color: #ffffff; text-decoration: none; font-size: 16px;">Home</a>
+            <a href="#about" style="color: #ffffff; text-decoration: none; font-size: 16px;">About Us</a>
+            <a href="#our-work" style="color: #ffffff; text-decoration: none; font-size: 16px;">Our Work</a>
+            <a href="#safeguarding" style="color: #ffffff; text-decoration: none; font-size: 16px;">Safeguarding</a>
+            <a href="#transparency" style="color: #ffffff; text-decoration: none; font-size: 16px;">Transparency</a>
+            <a href="#donate" style="color: #ffffff; text-decoration: none; font-size: 16px;">Donate</a>
+        </div>
         
-        <!-- Categorized Section Block: Our Work Inner Pages -->
-        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; display: flex; flex-direction: column; gap: 14px;">
-            <span style="color: #ffffff; font-weight: bold; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px;">Our Work</span>
-            <a href="#education" style="color: #a0aec0; text-decoration: none; font-size: 15px; padding-left: 10px;">Education</a>
-            <a href="#food-needs" style="color: #a0aec0; text-decoration: none; font-size: 15px; padding-left: 10px;">Food & Basic Needs</a>
-            <a href="#wellbeing" style="color: #a0aec0; text-decoration: none; font-size: 15px; padding-left: 10px;">Community & Wellbeing</a>
-            <a href="#protection" style="color: #a0aec0; text-decoration: none; font-size: 15px; padding-left: 10px;">Child Protection</a>
+        <!-- Sub-Categorized Section Block: Our Work Inner Pages -->
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="color: #ffffff; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">Our Work Deep Dive</span>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <a href="#education" style="color: #a0aec0; text-decoration: none; font-size: 14px;">Education</a>
+                <a href="#food-needs" style="color: #a0aec0; text-decoration: none; font-size: 14px;">Food & Basic Needs</a>
+                <a href="#wellbeing" style="color: #a0aec0; text-decoration: none; font-size: 14px;">Community & Wellbeing</a>
+                <a href="#protection" style="color: #a0aec0; text-decoration: none; font-size: 14px;">Child Protection</a>
+            </div>
         </div>
     </div>
 
     <!-- Bottom Contact Info Section Footer -->
-    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 30px; display: flex; flex-direction: column; gap: 14px;">
-        <span style="color: #ffffff; font-weight: bold; font-size: 15px; text-transform: uppercase;">Contact Us</span>
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; margin-top: 25px; display: flex; flex-direction: column; gap: 12px;">
+        <span style="color: #ffffff; font-weight: bold; font-size: 14px; text-transform: uppercase;">Contact Us</span>
         
-        <div style="display: flex; align-items: flex-start; gap: 10px; color: #a0aec0; font-size: 13px; line-height: 1.4;">
-            <span>📍</span>
-            <span>Ssumbwe Village,<br>Wakiso District, Uganda</span>
-        </div>
-        
-        <div style="display: flex; align-items: center; gap: 10px; color: #a0aec0; font-size: 13px;">
-            <span>✉️</span>
-            <a href="mailto:goodnewsfororphans2026@gmail.com" style="color: #a0aec0; text-decoration: none; word-break: break-all;">goodnewsfororphans2026@gmail.com</a>
+        <div style="display: flex; flex-direction: column; gap: 8px; color: #a0aec0; font-size: 13px; line-height: 1.4;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span>📍</span>
+                <span>Ssumbwe Village, Wakiso District, Uganda</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span>✉️</span>
+                <a href="mailto:goodnewsfororphans2026@gmail.com" style="color: #a0aec0; text-decoration: none;">goodnewsfororphans2026@gmail.com</a>
+            </div>
         </div>
 
-        <div style="font-size: 11px; color: #718096; margin-top: 15px;">
+        <div style="font-size: 11px; color: #718096; margin-top: 10px; text-align: center;">
             © 2026 Good News for Orphans. All rights reserved.
         </div>
     </div>
-</div>
+        </div>

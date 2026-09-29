@@ -403,122 +403,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Good News for Orphans Sticky Bottom Nav</title>
+    <title>Good News for Orphans Navigation</title>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         :root {
             --bg-color: #0b2240; /* Dark blue background from the image */
             --text-color: #ffffff;
-            --text-secondary: #cbd5e0;
+            --text-secondary: #a0aec0;
             --hover-color: #3182ce;
-            --icon-color: #f6ad55; /* Gold/yellow color for icons */
         }
 
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f7fafc;
-            padding-bottom: 70px; /* Prevents sticky bar from blocking content at the very bottom */
         }
 
-        /* --- STICKY MOBILE BOTTOM BAR --- */
-        .sticky-bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
+        /* Bottom Navigator / Footer Container */
+        .bottom-navigator {
             background-color: var(--bg-color);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 65px;
-            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-        }
-
-        .sticky-nav-item {
+            color: var(--text-color);
+            padding: 30px 20px 20px 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.75rem;
-            width: 100%;
-            height: 100%;
-            transition: color 0.2s ease, background-color 0.2s ease;
-        }
-
-        .sticky-nav-item i {
-            font-size: 1.25rem;
-            margin-bottom: 4px;
-        }
-
-        .sticky-nav-item:hover, .sticky-nav-item.active {
-            color: var(--text-color);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .sticky-nav-item:hover i {
-            color: var(--hover-color);
-        }
-
-        /* --- OVERLAY EXPANDABLE DRAWER --- */
-        .nav-drawer {
-            position: fixed;
-            bottom: -100%; /* Hidden by default */
-            left: 0;
-            right: 0;
-            background-color: var(--bg-color);
-            max-height: 80vh;
-            overflow-y: auto;
-            transition: bottom 0.3s ease-in-out;
-            z-index: 999;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            box-shadow: 0 -10px 25px rgba(0,0,0,0.5);
-            padding: 30px 24px 90px 24px; /* Extra bottom padding to clear the persistent bar */
+            gap: 20px;
             box-sizing: border-box;
         }
 
-        /* Class added via JS to slide drawer up */
-        .nav-drawer.open {
-            bottom: 0;
-        }
-
-        /* Drawer Overlay Backdrop */
-        .drawer-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none;
-            z-index: 998;
-        }
-
-        .drawer-backdrop.show {
-            display: block;
-        }
-
-        /* --- DRAWER CONTENT STYLING (From Original Panel Layout) --- */
-        .drawer-close-btn {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
+        /* Nav Links Styling */
         .nav-menu {
             display: flex;
             flex-direction: column;
-            gap: 22px;
+            gap: 25px;
         }
 
         .nav-item {
@@ -526,34 +443,46 @@
             text-decoration: none;
             font-size: 1.1rem;
             font-weight: 500;
+            transition: color 0.2s ease;
         }
 
+        .nav-item:hover {
+            color: var(--hover-color);
+        }
+
+        /* Section Headers (Our Work, Contact Us) */
         .section-header {
             font-size: 1.2rem;
             font-weight: bold;
-            color: var(--text-color);
             margin-top: 10px;
+            margin-bottom: -5px;
         }
 
+        /* Sub-links (Indented items under Our Work) */
         .sub-menu {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 20px;
+            padding-left: 0px; /* Kept flush as per image alignment */
         }
 
         .sub-item {
-            color: var(--text-secondary);
+            color: #cbd5e0;
             text-decoration: none;
             font-size: 1.05rem;
+            transition: color 0.2s ease;
         }
 
+        .sub-item:hover {
+            color: var(--text-color);
+        }
+
+        /* Contact Information Group */
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            margin-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
+            margin-top: 10px;
         }
 
         .info-row {
@@ -562,23 +491,30 @@
             gap: 15px;
             font-size: 1rem;
             line-height: 1.5;
-            color: var(--text-secondary);
+            color: #cbd5e0;
         }
 
         .info-row i {
-            color: var(--icon-color);
+            color: #f6ad55; /* Gold/yellow color for icons */
             margin-top: 3px;
             font-size: 1.1rem;
         }
 
         .info-row a {
-            color: var(--text-secondary);
+            color: #cbd5e0;
             text-decoration: none;
         }
 
+        .info-row a:hover {
+            text-decoration: underline;
+        }
+
+        /* Copyright Section */
         .copyright {
-            margin-top: 30px;
-            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 20px;
+            font-size: 0.9rem;
             color: #a0aec0;
             text-align: center;
         }
@@ -586,26 +522,21 @@
 </head>
 <body>
 
-    <!-- Dummy Main Page Content -->
-    <div style="padding: 20px; line-height: 1.6;">
-        <h2>Good News for Orphans</h2>
-        <p>Main body content goes here. The persistent bottom navigation bar stays locked to the bottom of the screen layout on mobile screens.</p>
-        <p>Tap the <strong>"Menu"</strong> button in the bottom bar to slide up the full layout content from your mockup.</p>
+    <!-- Main site content would go here -->
+    <div style="min-height: 50vh; padding: 20px;">
+        <h2>Main Website Content Area</h2>
+        <p>Scroll down to view the bottom navigation panel.</p>
     </div>
 
-    <!-- Backdrop dim overlay -->
-    <div class="drawer-backdrop" id="backdrop" onclick="toggleMenu()"></div>
-
-    <!-- Full Content Panel Drawer -->
-    <div class="nav-drawer" id="navDrawer">
-        <button class="drawer-close-btn" onclick="toggleMenu()">&times;</button>
-        
+    <!-- Bottom Navigator Component -->
+    <footer class="bottom-navigator">
         <nav class="nav-menu">
             <a href="#" class="nav-item">Home</a>
             <a href="#" class="nav-item">About Us</a>
             <a href="#" class="nav-item">Our Work</a>
             <a href="#" class="nav-item">Safeguarding</a>
             <a href="#" class="nav-item">Transparency</a>
+            <a href="#" class="nav-item">Donate</a>
             
             <div class="section-header">Our Work</div>
             <div class="sub-menu">
@@ -621,7 +552,10 @@
         <div class="contact-info">
             <div class="info-row">
                 <i class="fa-solid fa-location-dot"></i>
-                <div>Ssumbwe Village,<br>Wakiso District, Uganda</div>
+                <div>
+                    Ssumbwe Village,<br>
+                    Wakiso District, Uganda
+                </div>
             </div>
             <div class="info-row">
                 <i class="fa-solid fa-envelope"></i>
@@ -632,38 +566,7 @@
         <div class="copyright">
             &copy; 2026 Good News for Orphans. All rights reserved.
         </div>
-    </div>
-
-    <!-- Persistent Sticky Bottom Bar -->
-    <nav class="sticky-bottom-nav">
-        <a href="#" class="sticky-nav-item active">
-            <i class="fa-solid fa-house"></i>
-            <span>Home</span>
-        </a>
-        <a href="#" class="sticky-nav-item">
-            <i class="fa-solid fa-heart-solid fa-hand-holding-heart"></i>
-            <span>Donate</span>
-        </a>
-        <a href="mailto:goodnewsfororphans2026@gmail.com" class="sticky-nav-item">
-            <i class="fa-solid fa-envelope"></i>
-            <span>Contact</span>
-        </a>
-        <a href="javascript:void(0);" class="sticky-nav-item" onclick="toggleMenu()">
-            <i class="fa-solid fa-bars"></i>
-            <span>Menu</span>
-        </a>
-    </nav>
-
-    <!-- JavaScript Handling Interactive Toggle -->
-    <script>
-        function toggleMenu() {
-            const drawer = document.getElementById('navDrawer');
-            const backdrop = document.getElementById('backdrop');
-            
-            drawer.classList.toggle('open');
-            backdrop.classList.toggle('show');
-        }
-    </script>
+    </footer>
 
 </body>
-    </html>
+            </html>

@@ -1,48 +1,378 @@
-cssborder-radius: 6px; text-align: center; font-size: 14px; font-weight: 700; text-decoration: none; transition: 0.2s; cursor: pointer; }
-.hero-btn-green { background: #14e64d; color: white; }
-.hero-btn-white { background: white; color: #1e293b; }
 
-/* General Layout Blocks */
-.content-wrap { padding: 30px 20px; max-width: 500px; margin: 0 auto; }
-.tagline { text-align: center; font-size: 12px; font-weight: 700; color: #14e64d; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-.heading-main { text-align: center; font-size: 26px; font-weight: 800; color: #0f172a; margin-bottom: 12px; line-height: 1.2; }
-.summary-text { text-align: center; font-size: 14px; color: #475569; margin-bottom: 25px; }
 
-/* Structured Info & Feature Cards */
-.info-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
-.card-photo-box { width: calc(100% + 40px); margin: -20px -20px 15px -20px; height: 230px; background-color: #f1f5f9; display: flex; align-items: center; justify-content: center; content: color: #94a3b8; font-size: 14px; background-size: cover; background-position: center; }
-.info-card h3 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 10px; }
-.info-card p { font-size: 14px; color: #475569; }
-.icon-badge { width: 38px; height: 38px; border-radius: 8px; background: #ecfdf5; color: #14e64d; display: flex; align-items: center; justify-content: center; content: center; font-size: 16px; margin-bottom: 14px; }
+/* ==========================================================================
+   1. COLOR VARIABLES & LAYOUT RESETS
+   ========================================================================== */
+:root {
+  --primary-green: #2e7d32;
+  --primary-green-hover: #1b5e20;
+  --dark-green-bg: #113322;
+  --navy-footer: #0a192f;
+  --text-dark: #222222;
+  --text-muted: #666666;
+  --bg-light: #f8f9fa;
+  --white: #ffffff;
+  --border-radius: 12px;
+  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
-/* Check row style list */
-.check-list { list-style: none; margin: 20px 0 30px 0; }
-.check-list li { font-size: 14px; font-weight: 600; color: #1e293b; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
-.check-list i { color: #14e64d; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* Secure Payment Portal Area */
-.donation-panel { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
-.panel-headline { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 16px; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; display: flex; align-items: center; gap: 10px; }
-.btn-payment-gate { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; background: #0070ba; color: white; padding: 14px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 15px; margin-bottom: 25px; text-align: center; box-shadow: 0 4px 12px rgba(0, 112, 186, 0.2); }
-.data-row { margin-bottom: 10px; font-size: 14px; display: flex; justify-content: space-between; background: #f8fafc; padding: 10px 14px; border-radius: 6px; border: 1px solid #edf2f7; }
-.data-row strong { color: #475569; }
-.data-row span { font-weight: 600; color: #0f172a; }
-.notice-container { background: #fffbeh; border: 1px solid #fde68a; border-radius: 8px; padding: 15px; margin-top: 20px; font-size: 13px; color: #78350f; line-height: 1.5; }
+body {
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  background-color: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
 
-/* Dark Green Numbers Area */
-.metrics-block { background: #0b402c; color: white; padding: 40px 20px; text-align: center; }
-.metric-cell { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 20px; margin-bottom: 12px; }
-.metric-dash { width: 20px; height: 3px; background: #fbbf24; margin: 0 auto 10px auto; }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-/* Unified Dark Foot Hub */
-.footer { background: #0f172a; color: white; padding: 35px 20px; }
-.foot-hub-wrap { max-width: 450px; margin: 0 auto; }
-.foot-brand-row { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
-.foot-brand-row .logo-ring { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: #94a3b8; }
-.foot-brand-row h3 { font-size: 15px; color: white; }
-.social-matrix { display: flex; gap: 10px; margin: 20px 0; flex-wrap: wrap; }
-.social-matrix a { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 15px; transition: 0.2s; }
-.social-matrix a:hover { background: rgba(255,255,255,0.15); }
-.foot-section-title { font-size: 14px; font-weight: 700; color: white; margin: 25px 0 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; }
-.menu-stack { display: flex; flex-direction: column; gap: 12px; }
-.menu-stack a { color: #cbd5e1; }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* ==========================================================================
+   2. BUTTON STYLES
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-green);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-green-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--white);
+  color: var(--text-dark);
+}
+/* ==========================================================================
+   3. NAVIGATION NAVBAR
+   ========================================================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary-green);
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-dark);
+  border-radius: 2px;
+}
+/* ==========================================================================
+   4. HERO HEADER
+   ========================================================================== */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: var(--bg-light);
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+/* ==========================================================================
+   5. WORK GRID AND CARDS ("Our Work")
+   ========================================================================== */
+.section-padding {
+  padding: 50px 20px;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-subtle);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: #e0e0e0;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+/* ==========================================================================
+   6. JOURNEY CONTAINER (Forest Green block)
+   ========================================================================== */
+.journey-section {
+  background-color: var(--dark-green-bg);
+  color: var(--white);
+  border-radius: var(--border-radius);
+  margin: 20px;
+  padding: 40px 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+/* ==========================================================================
+   7. GUIDING PRINCIPLES ROW LIST
+   ========================================================================== */
+.guide-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.guide-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.guide-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-green);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.guide-text h4 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.guide-text p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+/* ==========================================================================
+   8. NAVY DARK FOOTER
+   ========================================================================== */
+.footer {
+  background-color: var(--navy-footer);
+  color: var(--white);
+  padding: 40px 20px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.social-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.social-icon:hover {
+  background: var(--primary-green);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+/* ==========================================================================
+   9. DESKTOP ADAPTIVE LAYOUT
+   ========================================================================== */@media (min-width: 768px) {
+  .hero-cta {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .footer-columns {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .section-padding {
+    padding: 80px 40px;
+  }
+}
+
+
+    

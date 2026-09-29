@@ -1,1 +1,237 @@
+/* Base Page Reset & Colors */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a304a;
+    background-color: #f7f9fa;
+    line-height: 1.6;
+}
+
+/* Header & Navigation Bar */
+header {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0d233a;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #657786;
+}
+
+/* Hero & Dark Blue Footer Sections */
+.dark-section {
+    background-color: #0c2942;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.dark-section h2, .dark-section p {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Specific Distinct Branding for Social Media Icons */
+.social-icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+.social-icon:active {
+    transform: scale(0.9);
+}
+
+/* Individual Platform Branding Colors */
+.social-icon.facebook {
+    background-color: #1877F2;
+}
+
+.social-icon.instagram {
+    background-color: #E4405F;
+}
+
+.social-icon.tiktok {
+    background-color: #000000;
+    border: 1px solid #ffffff;
+}
+
+.social-icon.youtube {
+    background-color: #FF0000;
+}
+
+.social-icon.whatsapp {
+    background-color: #25D366;
+}
+
+/* Quick Links Layout */
+.links-title {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.link-block {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+/* Content Container & Grid Layout */
+.container {
+    padding: 30px 20px;
+}
+
+.section-label {
+    text-transform: uppercase;
+    color: #1b7340;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0d233a;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    color: #4f637d;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* Standardized Content Cards */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    border: 1px solid #eef2f5;
+}
+
+.card-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0d233a;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #4f637d;
+    font-size: 15px;
+}
+
+/* Highlighted Warning/Safeguarding Yellow Box */
+.alert-box {
+    background-color: #fff9e6;
+    border: 1px solid #ffeeba;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+/* Buttons Styling */
+.btn-primary {
+    background-color: #1b7340;
+    color: #ffffff;
+    display: block;
+    width: 100%;
+    padding: 16px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 15px 0;
+    border: none;
+    box-shadow: 0 4px 6px rgba(27, 115, 64, 0.15);
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #0d233a;
+    display: block;
+    width: 100%;
+    padding: 16px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 15px 0;
+    border: 2px solid #e1e8ed;
+}
+
+/* Green Stats Section Badge */
+.green-stats-section {
+    background-color: #1b7340;
+    color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 25px;
+  }
